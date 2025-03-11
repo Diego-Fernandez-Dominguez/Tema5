@@ -2,14 +2,14 @@ package boletin1.ejercicio3;
 
 public class Producto {
 
-	private String tipo = "No especificado";
+	private String nombre = "No especificado";
 
 	private double precio;
 
 	public Producto(String nombre, double precio) {
 
-		if (this.tipo != null && !this.tipo.isEmpty()) {
-			this.tipo = nombre;
+		if (this.nombre != null && !this.nombre.isEmpty()) {
+			this.nombre = nombre;
 		}
 
 		if (precio > 0.1) {
@@ -19,12 +19,12 @@ public class Producto {
 	}
 
 	public String getNombre() {
-		return tipo;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		if (this.tipo != null && this.tipo.isEmpty()) {
-			this.tipo = nombre;
+		if (this.nombre != null && this.nombre.isEmpty()) {
+			this.nombre = nombre;
 		}
 
 	}
@@ -45,7 +45,7 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return this.tipo + " - " + this.precio + "€";
+		return this.nombre + " - " + this.precio + "€";
 	}
 
 }
