@@ -22,7 +22,7 @@ public class PoligonoMain {
 		do {
 
 			menu();
-			System.out.println("Eliga");
+			System.out.println("Seleccione una opcion");
 			opc = reader.nextInt();
 			reader.nextLine();
 			switch (opc) {
@@ -43,6 +43,10 @@ public class PoligonoMain {
 
 			case 3 -> {
 				listarPoligonos();
+			}
+
+			case 4 -> {
+				System.out.println("Chao pescao");
 			}
 
 			default -> {
