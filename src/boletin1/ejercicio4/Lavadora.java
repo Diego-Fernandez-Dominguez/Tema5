@@ -41,7 +41,7 @@ public class Lavadora extends Electrodomestico {
 			precioF += 30;
 		}
 
-		this.setPeso(precioF);
+		this.setPrecio(precioF);
 
 	}
 

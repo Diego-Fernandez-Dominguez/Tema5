@@ -43,18 +43,23 @@ public class Television extends Electrodomestico {
 
 	@Override
 	public void precioFinal() {
-		double precioF = 0;
 
-		// CALCULAR PORCENTAJE
-		if (resolucion > 40) {
-			precioF += this.getPrecio();
-		}
+		double precioF;
 
 		super.precioFinal();
 
 		precioF = this.getPrecio();
 
-		this.setPeso(precioF);
+		if (resolucion > 40) {
+			precioF += precioF * 0.3;
+		}
+
+		if (sintonizador) {
+			precioF += 50;
+		}
+
+		this.setPrecio(precioF);
+
 	}
 
 }
