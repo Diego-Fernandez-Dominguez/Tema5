@@ -70,6 +70,7 @@ public class PoligonoMain {
 		for (Poligono p : poligonos) {
 
 			System.out.println(p);
+			System.out.println("Area de la figura: " + p.area());
 			System.out.println("------------------------");
 
 		}

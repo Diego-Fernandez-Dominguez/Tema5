@@ -6,7 +6,7 @@ public abstract class Poligono {
 
 	public Poligono(int numeroLados) {
 
-		if (numeroLados >= 4) {
+		if (numeroLados >= 3) {
 			this.numeroLados = numeroLados;
 		}
 
