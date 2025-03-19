@@ -44,20 +44,36 @@ public class Rectangulo extends Poligono {
 		}
 	}
 
+	/**
+	 * Metodo getter para obtener el lado 1 del rectangulo
+	 * @return Devuelve el tamaño del lado 1 
+	 */
 	public double getLado1() {
 		return lado1;
 	}
 
+	/**
+	 * Metodo setter para cambiarle el tamaño al lado 1
+	 * @param lado1 El tamaño del lado al que se quiere cambiar
+	 */
 	public void setLado1(double lado1) {
 		if (lado1 >= 1) {
 			this.lado1 = lado1;
 		}
 	}
 
+	/**
+	 * Metodo getter para obtener el lado 2 del rectangulo
+	 * @return Devuelve el tamaño del lado 2
+	 */
 	public double getLado2() {
 		return lado2;
 	}
 
+	/**
+	 * Metodo setter para cambiarle el tamaño al lado 2
+	 * @param lado2 El tamaño del lado al que se quiere cambiar
+	 */
 	public void setLado2(double lado2) {
 		if (lado2 >= 1) {
 			this.lado2 = lado2;
@@ -65,11 +81,19 @@ public class Rectangulo extends Poligono {
 	}
 
 	@Override
+	/**
+	 * Metodo para calcular el area del rectangulo
+	 * 
+	 * @return Devuelve el area del rectangulo con el que se ha llamado
+	 */
 	public double area() {
 		return lado1 * lado2;
 	}
 
 	@Override
+	/**
+	 * Metodo toString de la clase rectangulo, el cual sacara el tamaño de sus lados
+	 */
 	public String toString() {
 		return "Rectangulo: Lado1: " + lado1 + " Lado2: " + lado2;
 	}
