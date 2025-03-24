@@ -1,7 +1,5 @@
 package interfaces.ejercicio2;
 
-import java.util.Objects;
-
 public class Futbolista implements Comparable<Futbolista> {
 
 	private int numCamisa;
@@ -38,8 +36,10 @@ public class Futbolista implements Comparable<Futbolista> {
 
 		int res = 0;
 
-		if (numCamisa < f.numCamisa) {
-			res = -1;
+		if (this.numCamisa == f.numCamisa) {
+			res = this.nombre.compareTo(f.nombre);
+		} else {
+			res = this.numCamisa - f.numCamisa;
 		}
 
 		return res;
@@ -62,7 +62,7 @@ public class Futbolista implements Comparable<Futbolista> {
 
 	@Override
 	public String toString() {
-		return numCamisa + " " + nombre + " " + numGoles + " " + edad;
+		return "Futbolista: " + numCamisa + " - " + nombre + " - " + numGoles + " goles" + " - " + edad + " anyos";
 	}
 
 }
