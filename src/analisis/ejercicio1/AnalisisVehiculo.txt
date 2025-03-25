@@ -1,0 +1,33 @@
+Vehiculo
+	- marca: String
+	- modelo: String
+	- color: String
+	- matricula: String
+	----------------------
+	+ estadoMotor() : boolean
+	+ marchaActual() : int
+	+ velocidadActual() : double
+	
+	+ parar() : void
+	+ arrancar() : void
+	+ subirMarcha() : void
+	+ bajarMarcha() : void
+
+
+Turismo extends Vehiculo
+	enum Tipo {PROFESIONAL, PARTICULAR}
+	- numPlazas: int
+	- tipoUso : Tipo
+		
+	
+Camion extends Vehiculo
+	- pesoMax : double
+	- mercanciaPeligrosa : boolean
+
+
+Motocicleta extends Vehiculo
+	- cilindrada : ?
+	- carnet : boleean
+	
+	-----------------------
+	- requiereCarnet : boolean
