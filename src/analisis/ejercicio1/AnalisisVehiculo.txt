@@ -3,11 +3,10 @@ Vehiculo
 	- modelo: String
 	- color: String
 	- matricula: String
+	- motor: boolean
+	- velocidad: double
+	- marcha: int
 	----------------------
-	+ estadoMotor() : boolean
-	+ marchaActual() : int
-	+ velocidadActual() : double
-	
 	+ parar() : void
 	+ arrancar() : void
 	+ subirMarcha() : void
@@ -26,7 +25,7 @@ Camion extends Vehiculo
 
 
 Motocicleta extends Vehiculo
-	- cilindrada : ?
+	- cilindrada : int
 	- carnet : boleean
 	
 	-----------------------
