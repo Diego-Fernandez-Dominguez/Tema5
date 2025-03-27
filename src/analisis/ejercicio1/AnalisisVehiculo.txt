@@ -4,13 +4,13 @@ Vehiculo
 	- color: String
 	- matricula: String
 	- motor: boolean
-	- velocidad: double
+	- velocidad: int
 	- marcha: int
 	----------------------
 	+ parar() : void
 	+ arrancar() : void
-	+ subirMarcha() : void
-	+ bajarMarcha() : void
+	+ subirMarcha() : boolean
+	+ bajarMarcha() : boolean
 
 
 Turismo extends Vehiculo
