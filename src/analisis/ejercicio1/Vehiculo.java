@@ -24,7 +24,6 @@ public class Vehiculo {
 
 		if (modelo != null && !modelo.isBlank()) {
 			this.modelo = modelo;
-
 		}
 
 		if (color != null && !color.isBlank()) {
@@ -36,79 +35,150 @@ public class Vehiculo {
 		}
 	}
 
-	public void parar() {
+	public String getMarca() {
+		return marca;
+	}
 
-		if (!this.motor) {
-			System.out.println("Ya esta parao maquinon");
-		} else {
+	public String getModelo() {
+		return modelo;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public boolean isMotor() {
+		return motor;
+	}
+
+	public int getVelocidad() {
+		return velocidad;
+	}
+
+	public int getMarcha() {
+		return marcha;
+	}
+
+	public void pararArrancar() {
+
+		if (this.motor) {
+			System.out.println("Parando motor");
 			this.motor = false;
-			this.velocidad = 0;
-			this.marcha = 1;
+
+		} else {
+			System.out.println("Arrancando motor");
+			this.motor = true;
 		}
 
-		this.motor = false;
 		this.velocidad = 0;
 		this.marcha = 1;
 	}
 
-	public void arrancar() {
-
-		if (this.motor) {
-			System.out.println("Ya esta arrancao maquinon");
-		} else {
-			this.motor = true;
-			this.velocidad = 0;
-			this.marcha = 1;
-		}
-
-	}
-
-	public boolean subirMarcha(int velocidadNueva) {
+	public boolean subirMarcha() {
 
 		boolean sePudo = false;
 
-		if (velocidadNueva < this.velocidad) {
-			cambiarMarcha(velocidadNueva);
-			sePudo=true;
-			this.velocidad=velocidadNueva;
+		if (this.marcha < 5) {
+			this.marcha += 1;
+			sePudo = true;
+			cambiarVelocidad();
 		}
 
 		return sePudo;
 
 	}
 
-	public boolean bajarMarcha(int velocidadNueva) {
+	public boolean bajarMarcha() {
 
 		boolean sePudo = false;
 
-		if (velocidadNueva > this.velocidad) {
-			cambiarMarcha(velocidadNueva);
+		if (this.marcha > 1) {
+			this.marcha += 1;
+			sePudo = true;
+			cambiarVelocidad();
 		}
-		
+
+		return sePudo;
+	}
+
+	public boolean acelerar(int velocidad) {
+
+		boolean sePudo = false;
+
+		if (velocidad > 0) {
+			this.velocidad += velocidad;
+			cambiarMarcha(this.velocidad);
+			sePudo = true;
+		}
+
 		return sePudo;
 
+	}
+
+	public boolean frenar(int velocidad) {
+
+		boolean sePudo = false;
+
+		if (velocidad > 0 && velocidad <= this.velocidad) {
+			this.velocidad -= velocidad;
+			cambiarMarcha(this.velocidad);
+			sePudo = true;
+		}
+
+		return sePudo;
+
+	}
+
+	private void cambiarVelocidad() {
+		switch (this.marcha) {
+
+		case 1 -> {
+			this.velocidad = 15;
+		}
+		case 2 -> {
+			this.velocidad = 31;
+		}
+		case 3 -> {
+			this.velocidad = 51;
+		}
+		case 4 -> {
+			this.velocidad = 71;
+		}
+		case 5 -> {
+			this.velocidad = 101;
+		}
+		}
 	}
 
 	private void cambiarMarcha(int velocidad) {
 
 		if (velocidad >= 0) {
-			System.out.println("Se ha cambiado a 1º marcha");
+			this.marcha = 1;
+
 			if (velocidad >= 30) {
-				System.out.println("Se ha cambiado a 2º marcha");
+				this.marcha = 2;
+
 				if (velocidad >= 50) {
-					System.out.println("Se ha cambiado a 3º marcha");
+					this.marcha = 3;
+
 					if (velocidad >= 70) {
-						System.out.println("Se ha cambiado a 4º marcha");
+						this.marcha = 4;
+
 						if (velocidad >= 100) {
-							System.out.println("Se ha cambiado a 5º marcha");
+							this.marcha = 5;
 						}
 					}
 				}
 			}
 		}
-
-		System.out.println("Se ha llegado a la marcha indicada");
-
 	}
 
 }

@@ -6,9 +6,21 @@ Vehiculo
 	- motor: boolean
 	- velocidad: int
 	- marcha: int
+	
+	Vehiculo(marca, modelo, color, matricula)
+	
+	getMarca()
+	getModelo()
+	getColor()
+	getMatricula()
+	getMotor()
+	getVelocidad()
+	getMarcha()
+	
+	setColor()
+	
 	----------------------
-	+ parar() : void
-	+ arrancar() : void
+	+ pararArrancar() : void
 	+ subirMarcha() : boolean
 	+ bajarMarcha() : boolean
 
