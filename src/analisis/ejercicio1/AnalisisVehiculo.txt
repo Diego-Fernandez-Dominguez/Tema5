@@ -23,6 +23,8 @@ Vehiculo
 	+ pararArrancar() : void
 	+ subirMarcha() : boolean
 	+ bajarMarcha() : boolean
+	+ acelerar(int velocidad) : boolean
+	+ frenar(int velocidad) : boolean
 
 
 Turismo extends Vehiculo
