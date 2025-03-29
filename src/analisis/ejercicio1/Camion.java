@@ -32,6 +32,9 @@ public class Camion extends Vehiculo {
 		this.mercanciaPeligrosa = mercanciaPeligrosa;
 	}
 	
-	
+	public String toString() {
+		return super.toString() + ", PesoMax: " + pesoMax + ", MercanciaPeligrosa: "
+				+ mercanciaPeligrosa;
+	}
 
 }

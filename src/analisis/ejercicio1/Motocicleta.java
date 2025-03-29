@@ -4,8 +4,6 @@ public class Motocicleta extends Vehiculo {
 
 	private int cilindrada;
 
-	private boolean carnet;
-
 	public Motocicleta(String marca, String modelo, String color, String matricula, int cilindrada) {
 		super(marca, modelo, color, matricula);
 
@@ -13,19 +11,13 @@ public class Motocicleta extends Vehiculo {
 			this.cilindrada = cilindrada;
 		}
 
-		this.carnet = requiereCarnet();
-
-	}
-	
-	public boolean isCarnet() {
-		return carnet;
 	}
 
 	public int getCilindrada() {
 		return cilindrada;
 	}
 
-	private boolean requiereCarnet() {
+	public boolean requiereCarnet() {
 
 		boolean necesario = false;
 
@@ -34,6 +26,10 @@ public class Motocicleta extends Vehiculo {
 		}
 
 		return necesario;
+	}
+
+	public String toString() {
+		return super.toString() + ", Cilindrada: " + cilindrada;
 	}
 
 }

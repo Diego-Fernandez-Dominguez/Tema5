@@ -44,4 +44,8 @@ public class Turismo extends Vehiculo {
 
 	}
 
+	public String toString() {
+		return super.toString() + ", TipoUso: " + tipoUso + ", NumeroPlazas: " + numPlazas;
+	}
+
 }
