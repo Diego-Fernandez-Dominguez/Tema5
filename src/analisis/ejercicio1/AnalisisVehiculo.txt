@@ -1,46 +1,57 @@
-Vehiculo
-	- marca: String
-	- modelo: String
-	- color: String
-	- matricula: String
-	- motor: boolean
-	- velocidad: int
-	- marcha: int
+class Vehiculo 
+	- String marca
+	- String modelo
+	- String color
+	- String matricula
+	
+	- boolean encendido = false
+	- int marcha = 0
+	- int velocidad = 0
 	
 	Vehiculo(marca, modelo, color, matricula)
-	
 	getMarca()
 	getModelo()
 	getColor()
 	getMatricula()
-	getMotor()
-	getVelocidad()
+	getEncendido()
 	getMarcha()
+	getVelocidad()
 	
-	setColor()
+	setColor(String)
 	
-	----------------------
-	+ pararArrancar() : void
-	+ subirMarcha() : boolean
-	+ bajarMarcha() : boolean
-	+ acelerar(int velocidad) : boolean
-	+ frenar(int velocidad) : boolean
-
-
-Turismo extends Vehiculo
-	enum Tipo {PROFESIONAL, PARTICULAR}
-	- numPlazas: int
-	- tipoUso : Tipo
-		
+	+ void parar()
+	+ void arrancar()
+	+ void subirMarcha()
+	+ void bajarMarcha()
+	+ boolean acelerar(int velocidad)
+	+ boolean frenar(int velocidad)
 	
-Camion extends Vehiculo
-	- pesoMax : double
-	- mercanciaPeligrosa : boolean
+class Turismo extends Vehiculo
+	enum TipoUso {PROFESIONAL, PARTICULAR}
 
-
-Motocicleta extends Vehiculo
-	- cilindrada : int
-	- carnet : boleean
+	- int numPlazas
+	- TipoUso uso
 	
-	-----------------------
-	- requiereCarnet : boolean
+	Turismo(marca, modelo, color, matricula, numPlazas, uso)
+	+ getNumPlazas()
+	+ getUso()
+	
+	+ setUso(uso)
+	
+class Camion extends Vehiculo
+	- double pesoMaximo
+	- boolean mercanciaPeligrosa
+	
+	Camion(marca, modelo, color, matricula, pesoMaximo, mercanciaPeligrosa)
+	
+	getPesoMaximo()
+	getMercanciaPeligrosa()
+	
+	setMercanciaPeligrosa(boolean)
+	
+class Motocicleta extends Vehiculo
+	- int cilindrada
+	
+	Motocicleta(marca, modelo, color, matricula, cilindrada)
+	+ getCilindrada()
+	+ boolean requiereCarnet()
