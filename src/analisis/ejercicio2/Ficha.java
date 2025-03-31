@@ -1,6 +1,6 @@
 package analisis.ejercicio2;
 
-public class Ficha {
+public abstract class Ficha {
 
 	private int id;
 
@@ -25,6 +25,8 @@ public class Ficha {
 	public String getTitulo() {
 		return titulo;
 	}
+
+	public abstract int tiempoPrestamo();
 
 	@Override
 	public String toString() {

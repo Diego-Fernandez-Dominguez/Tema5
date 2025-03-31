@@ -1,0 +1,89 @@
+class CuentaBancaria
+	private int numCuenta
+	protected double saldo
+	private List<Titular> (1 min, 3 max)
+	
+	----------------------------------------------------
+	
+	public CuentaBancaria(numCuenta, saldo, titular1)
+	
+	public CuentaBancaria(numCuenta, saldo, titular1, titular2)
+	
+	public CuentaBancaria(numCuenta, saldo, titular1, titular2, titular3)
+	
+	-----------------------------------------------------
+	
+	public boolean ingresar(double saldo)
+	
+	public boolean retirar(double saldo)
+	
+	public boolean anyadirTitular(titular)
+	
+	public boolean borrarTitular(titular)
+
+
+class Titular
+	private String dni
+	private String nombre
+	private String apellidos
+	private int telefono
+	
+	-----------------------------------------------------
+	
+	public Titular(dni, nombre, apellidos, telefono)
+	
+	-----------------------------------------------------
+
+
+class Transaccion
+	private int dia
+	private int mes
+	private int anyo
+	private String concepto
+	private int importe
+	
+	public Transaccion(dia, mes, anyo, concepto, importe)
+	
+	-----------------------------------------------------
+
+
+class CuentaAhorro extends CuentaBancaria
+	private double cuotaMant
+	private double interesAnual
+	
+	----------------------------------------------------
+
+	public CuentaAhorro(numCuenta, saldo, titular1, cuotaMant, interesAnual)
+	
+	public CuentaAhorro(numCuenta, saldo, titular1, titular2, cuotaMant, interesAnual)
+	
+	public CuentaAhorro(numCuenta, saldo, titular1, titular2, titular3, cuotaMant, interesAnual)
+
+	----------------------------------------------------
+
+	public double saldoNuevo()
+	
+	public void restarCuota()
+	
+	-----------------------------------------------------
+	
+	
+class CuentaCorriente extends CuentaBancaria
+	private List<Transaccion>
+	private int porcentajeCobrado
+	private int numTransacciones
+
+	----------------------------------------------------
+
+	public CuentaCorriente(numCuenta, saldo, titular1, porcentajeCobrado, numTransacciones)
+	
+	public CuentaCorriente(numCuenta, saldo, titular1, titular2, porcentajeCobrado, numTransacciones)
+	
+	public CuentaCorriente(numCuenta, saldo, titular1, titular2, titular3, porcentajeCobrado, numTransacciones)
+	
+	----------------------------------------------------
+
+	public boolean nuevaTransaccion(double saldo)
+	
+	-----------------------------------------------------
+	

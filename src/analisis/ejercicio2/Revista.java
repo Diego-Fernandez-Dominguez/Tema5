@@ -26,6 +26,11 @@ public class Revista extends Ficha {
 	}
 
 	@Override
+	public int tiempoPrestamo() {
+		return 10;
+	}
+
+	@Override
 	public String toString() {
 		return super.toString() + ", NumRevista: " + numRevista + ", Anyo: " + anyo;
 	}

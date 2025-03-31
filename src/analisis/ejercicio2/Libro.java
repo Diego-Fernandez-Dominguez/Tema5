@@ -24,6 +24,11 @@ public class Libro extends Ficha {
 	public String getEditorial() {
 		return editorial;
 	}
+	
+	@Override
+	public int tiempoPrestamo() {
+		return 15;
+	}
 
 	@Override
 	public String toString() {

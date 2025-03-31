@@ -1,4 +1,4 @@
-class Ficha
+class abstract Ficha
 	private int id
 	private String titulo
 	
@@ -6,6 +6,8 @@ class Ficha
 	
 	getId()
 	getTitulo()
+	
+	public abstract int tiempoPrestamo()
 	
 
 class Libro extends Ficha

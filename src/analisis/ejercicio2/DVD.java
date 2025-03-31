@@ -45,6 +45,11 @@ public class DVD extends Ficha {
 		}
 		}
 	}
+	
+	@Override
+	public int tiempoPrestamo() {
+		return 5;
+	}
 
 	@Override
 	public String toString() {
