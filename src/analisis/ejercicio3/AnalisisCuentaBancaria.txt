@@ -1,15 +1,11 @@
 class CuentaBancaria
 	private int numCuenta
 	protected double saldo
-	private List<Titular> (1 min, 3 max)
+	private List<Titular> titulares (1 min, 3 max)
 	
 	----------------------------------------------------
 	
-	public CuentaBancaria(numCuenta, saldo, titular1)
-	
-	public CuentaBancaria(numCuenta, saldo, titular1, titular2)
-	
-	public CuentaBancaria(numCuenta, saldo, titular1, titular2, titular3)
+	public CuentaBancaria(numCuenta, titular)
 	
 	-----------------------------------------------------
 	
@@ -40,7 +36,7 @@ class Transaccion
 	private int mes
 	private int anyo
 	private String concepto
-	private int importe
+	private double importe
 	
 	public Transaccion(dia, mes, anyo, concepto, importe)
 	
@@ -53,37 +49,29 @@ class CuentaAhorro extends CuentaBancaria
 	
 	----------------------------------------------------
 
-	public CuentaAhorro(numCuenta, saldo, titular1, cuotaMant, interesAnual)
+	public CuentaAhorro(numCuenta, titular, cuotaMant, interesAnual)
 	
-	public CuentaAhorro(numCuenta, saldo, titular1, titular2, cuotaMant, interesAnual)
-	
-	public CuentaAhorro(numCuenta, saldo, titular1, titular2, titular3, cuotaMant, interesAnual)
-
 	----------------------------------------------------
 
 	public double saldoNuevo()
 	
-	public void restarCuota()
+	public double restarCuota()
 	
 	-----------------------------------------------------
 	
 	
 class CuentaCorriente extends CuentaBancaria
-	private List<Transaccion>
+	private List<Transaccion> transacciones
 	private int porcentajeCobrado
 	private int numTransacciones
 
 	----------------------------------------------------
 
-	public CuentaCorriente(numCuenta, saldo, titular1, porcentajeCobrado, numTransacciones)
-	
-	public CuentaCorriente(numCuenta, saldo, titular1, titular2, porcentajeCobrado, numTransacciones)
-	
-	public CuentaCorriente(numCuenta, saldo, titular1, titular2, titular3, porcentajeCobrado, numTransacciones)
+	public CuentaCorriente(numCuenta, titular, porcentajeCobrado)
 	
 	----------------------------------------------------
 
-	public boolean nuevaTransaccion(double saldo)
+	public boolean nuevaTransaccion(Transaccion transacc)
 	
 	-----------------------------------------------------
 	

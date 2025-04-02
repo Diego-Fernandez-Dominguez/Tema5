@@ -1,6 +1,6 @@
 package analisis.ejercicio3;
 
-public class Titular {
+public class Titular implements Comparable<Titular> {
 
 	private String dni;
 	private String nombre;
@@ -25,6 +25,20 @@ public class Titular {
 			this.telefono = telefono;
 		}
 
+	}
+
+	@Override
+	public String toString() {
+		return "DNI: " + dni + ", Nombre: " + nombre + ", Apellidos: " + apellidos + ", Telefono: " + telefono;
+	}
+
+	@Override
+	/**
+	 * Tengo que hacerlo
+	 */
+	public int compareTo(Titular t) {
+
+		return 0;
 	}
 
 }
