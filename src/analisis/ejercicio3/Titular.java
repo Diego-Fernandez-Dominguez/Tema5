@@ -38,7 +38,7 @@ public class Titular implements Comparable<Titular> {
 	 */
 	public int compareTo(Titular t) {
 
-		return 0;
+		return this.dni.compareTo(t.dni);
 	}
 
 }

@@ -11,6 +11,38 @@ class Contacto
 	compareTo()
 	
 
-class ContPersona
-	private 
-	private
+class Fecha
+	private int dia
+	private int mes
+	private int anyo
+	
+	-----------------------------------------
+	
+	public Fecha(dia, mes, anyo)
+	
+	-----------------------------------------
+	
+
+class Persona extends Fecha
+	private String nombreReal
+	private int telefono
+	private Fecha cumpleanyos
+	
+	-----------------------------------------
+	
+	public ContactoPersona(nombre, telefono, nombreReal, telefono, cumpleanyos)
+	
+	-----------------------------------------
+	
+	
+class Empresa
+	private String nombreEmpresa
+	private int telefonoEmpresa
+	private String paginaWeb
+	
+	
+	-----------------------------------------
+	
+	public ContactoEmpresa(nombre, telefono, nombreEmpresa, telefono, paginaWeb)
+	
+	-----------------------------------------
