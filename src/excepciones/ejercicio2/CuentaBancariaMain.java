@@ -1,4 +1,4 @@
-package comparator.ejercicio5;
+package excepciones.ejercicio2;
 
 import java.util.Arrays;
 import java.util.Comparator;
