@@ -9,10 +9,6 @@ public class FutbolistaMain {
 
 		Futbolista[] furbolistas = new Futbolista[5];
 
-		Comparator<Futbolista> edadAsc = (a, b) -> {
-			return a.getEdad() - b.getEdad();
-		};
-		
 		Comparator<Futbolista> golesDesc = (a,b) ->{
 			return b.getNumGoles()-a.getNumGoles();
 		};
@@ -29,9 +25,9 @@ public class FutbolistaMain {
 		furbolistas[3] = fut4;
 		furbolistas[4] = fut5;
 		
-		Arrays.sort(furbolistas, edadAsc);
+		Arrays.sort(furbolistas);
 		System.out.println(Arrays.toString(furbolistas));
-		
+
 		Arrays.sort(furbolistas, golesDesc);
 		System.out.println(Arrays.toString(furbolistas));
 

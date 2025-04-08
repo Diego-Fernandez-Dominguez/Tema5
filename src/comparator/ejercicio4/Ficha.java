@@ -1,6 +1,6 @@
 package comparator.ejercicio4;
 
-public abstract class Ficha {
+public abstract class Ficha implements Comparable<Ficha> {
 
 	private int id;
 
@@ -32,6 +32,11 @@ public abstract class Ficha {
 	public String toString() {
 
 		return "ID: " + id + ", Titulo: " + titulo;
+
+	}
+
+	public int compareTo(Ficha f) {
+		return this.id - f.id;
 
 	}
 
