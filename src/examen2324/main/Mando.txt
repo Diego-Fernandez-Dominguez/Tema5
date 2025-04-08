@@ -1,0 +1,71 @@
+class Mando
+	private String modelo
+	private double anchura
+	private double altura
+	private double precio
+	private boolean estadoBoton
+
+	---------------------------------------
+	
+	public Mando(modelo, anchura, altura, precio)
+	
+	---------------------------------------
+
+	public boolean encenderMando()
+	public boolean apagarMando()
+
+
+interface Volumen
+	
+	boolean subirVolumen()
+	boolean bajarVolumen()
+	
+	
+interface Velocidad
+	
+	boolean subirVelocidad()
+	boolean bajarVelocidad()
+	
+	
+class Television extends Mando implements Volumen
+	private int volumen
+	private int canal
+	
+	---------------------------------------	
+
+	public Television (modelo, anchura, altura, precio, volumen, canal)
+
+	---------------------------------------
+
+
+class MiniCadenas extends Mando implements Volumen
+
+	private int volumen
+	
+	---------------------------------------	
+
+	public MiniCadena (modelo, anchura, altura, precio)
+
+	---------------------------------------
+
+
+class Aspiradora extends Mando implements Velocidad
+	private int velocidad (def 0, max 3)
+
+	public Aspiradora(modelo, anchura, altura, precio)
+
+
+class AireAcondicionado extends Mando implements Velocidad
+	enum Modo{
+		FRIO, CALOR
+	}
+	
+	private Modo tipoModo (def FRIO)
+	
+	private int temperatura
+	
+	private int velocidad (def 0, max 5)
+	
+	public AireAcondicionado(modelo, anchura, altura, precio)
+
+	
