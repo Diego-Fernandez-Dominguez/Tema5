@@ -7,14 +7,18 @@ public class Titular implements Comparable<Titular> {
 	private String apellidos;
 	private int telefono;
 
-	public Titular(String dni, String nombre, String apellidos, int telefono) {
+	public Titular(String dni, String nombre, String apellidos, int telefono) throws DniException, NombreException {
 
 		if (dni != null && !dni.isBlank()) {
 			this.dni = dni;
+		} else {
+			throw new DniException();
 		}
 
 		if (nombre != null && !nombre.isBlank()) {
 			this.nombre = nombre;
+		} else {
+			throw new NombreException();
 		}
 
 		if (apellidos != null && !apellidos.isBlank()) {
@@ -39,8 +43,12 @@ public class Titular implements Comparable<Titular> {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre(String nombre) throws NombreException {
+		if (nombre != null && !nombre.isBlank()) {
+			this.nombre = nombre;
+		} else {
+			throw new NombreException();
+		}
 	}
 
 	public String getApellidos() {

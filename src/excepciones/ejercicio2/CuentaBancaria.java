@@ -8,7 +8,7 @@ public class CuentaBancaria {
 	protected double saldo;
 	private TreeSet<Titular> titulares;
 
-	public CuentaBancaria(int numCuenta, Titular titular1) {
+	public CuentaBancaria(int numCuenta, Titular titular1, int saldo) throws SaldoException {
 
 		this.titulares = new TreeSet<Titular>();
 
@@ -16,6 +16,12 @@ public class CuentaBancaria {
 
 			if (numCuenta > 0) {
 				this.numCuenta = numCuenta;
+			}
+			
+			if(saldo>=0) {
+				this.saldo=saldo;
+			}else {
+				throw new SaldoException();
 			}
 
 			anyadirTitular(titular1);
@@ -32,8 +38,12 @@ public class CuentaBancaria {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
+	public void setSaldo(double saldo) throws SaldoException {
+		if(saldo>=0) {
+			this.saldo=saldo;
+		}else {
+			throw new SaldoException();
+		}
 	}
 
 	public TreeSet<Titular> getTitulares() {

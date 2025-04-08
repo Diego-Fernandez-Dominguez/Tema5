@@ -31,22 +31,31 @@ public class Hora {
 	 * @param hora    Parametro que va a guadar la hora del objeto
 	 * @param minuto  Parametro que va a guadar los minutos del objeto
 	 * @param segundo Parametro que va a guadar los segundos del objeto
+	 * @throws NegativeHourException 
+	 * @throws NegativeMinuteException 
+	 * @throws NegativeSecondException 
 	 */
-	public Hora(int hora, int minuto, int segundo) {
+	public Hora(int hora, int minuto, int segundo) throws NegativeHourException, NegativeMinuteException, NegativeSecondException {
 
 		// Esta restriccion obliga a la hora a estar entre 0 y 23
 		if (hora <= 23 && hora >= 0) {
 			this.hora = hora;
+		}else {
+			throw new NegativeHourException();
 		}
 
 		// Esta restriccion obliga a los minutos a estar entre 0 y 59
 		if (minuto <= 59 && hora >= 0) {
 			this.minuto = minuto;
+		}else {
+			throw new NegativeMinuteException();
 		}
 
 		// Esta restriccion obliga a los segundos a estar entre 0 y 59
 		if (segundo <= 59 && hora >= 0) {
 			this.segundo = segundo;
+		}else {
+			throw new NegativeSecondException();
 		}
 
 	}

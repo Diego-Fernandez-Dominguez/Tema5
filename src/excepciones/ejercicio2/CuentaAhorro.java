@@ -5,8 +5,8 @@ public class CuentaAhorro extends CuentaBancaria {
 	private double cuotaMant;
 	private double interesAnual;
 
-	public CuentaAhorro(int numCuenta, Titular titular, double cuotaMant, double interesAnual) {
-		super(numCuenta, titular);
+	public CuentaAhorro(int numCuenta, Titular titular, int saldo, double cuotaMant, double interesAnual) throws SaldoException {
+		super(numCuenta, titular, saldo);
 
 		if (cuotaMant > 0) {
 			this.cuotaMant = cuotaMant;

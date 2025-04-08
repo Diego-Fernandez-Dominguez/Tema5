@@ -2,54 +2,65 @@ package excepciones.ejercicio2;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class CuentaBancariaMain {
+
+	static Scanner reader = new Scanner(System.in);
+
 	public static void main(String[] args) {
 
-		CuentaBancaria[] cuentas = new CuentaBancaria[2];
-		
-		Titular[] titu = new Titular[3];
+		Titular tit1 = null;
 
-		Titular tit1 = new Titular("12345678A", "A", "Z", 123456789);
-		Titular tit2 = new Titular("23456789B", "B", "Z", 234567891);
-		Titular tit3 = new Titular("23456789C", "B", "A", 234567891);
+		boolean error = false;
 
-		CuentaBancaria cb1 = new CuentaBancaria(1234, tit1);
-		CuentaBancaria cb2 = new CuentaBancaria(9876, tit2);
+		String dni;
 
-		cb1.ingresar(56);
-		cb2.ingresar(3);
+		String nombre;
 
-		cuentas[0] = cb2;
-		cuentas[1] = cb1;
+		int saldo;
 
-		titu[0] = tit2;
-		titu[1] = tit1;
-		titu[2] = tit3;
+		do {
+			try {
 
-		Comparator<CuentaBancaria> numCuentaDsc = (a, b) -> {
-			return (int) (b.getSaldo() - a.getSaldo());
-		};
+				error = false;
 
-		Arrays.sort(cuentas, numCuentaDsc);
-		System.out.println(Arrays.toString(cuentas));
+				System.out.println("Dime el dni");
+				dni = reader.nextLine();
 
-		Comparator<Titular> apellNombr = (a, b) -> {
+				System.out.println("Digame el nombre");
+				nombre = reader.nextLine();
 
-			int dev = 0;
+				tit1 = new Titular(dni, nombre, "perro", 12345678);
 
-			if (a.getApellidos().equals(b.getApellidos())) {
-				dev = a.getNombre().compareTo(b.getNombre());
-			} else {
-				dev = a.getApellidos().compareTo(b.getApellidos());
+			} catch (DniException e) {
+				System.err.println(e.getMessage());
+				error = true;
+
+			} catch (NombreException e) {
+				System.err.println(e.getMessage());
+				error = true;
 			}
 
-			return dev;
+		} while (error);
 
-		};
+		do {
+			try {
 
-		Arrays.sort(titu, apellNombr);
-		System.out.println(Arrays.toString(titu));
+				error = false;
+
+				System.out.println("Dime el saldo");
+				saldo = reader.nextInt();
+
+				CuentaCorriente cc1 = new CuentaCorriente(1, tit1, saldo, 0.21);
+
+			} catch (SaldoException e) {
+				System.err.println(e.getMessage());
+				error = true;
+
+			}
+
+		} while (error);
 
 	}
 

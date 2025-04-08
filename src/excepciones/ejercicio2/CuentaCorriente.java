@@ -8,8 +8,8 @@ public class CuentaCorriente extends CuentaBancaria {
 	private double porcentajeCobrado;
 	private int numTransacciones;
 
-	public CuentaCorriente(int numCuenta, Titular titular1, double porcentajeCobrado) {
-		super(numCuenta, titular1);
+	public CuentaCorriente(int numCuenta, Titular titular1, int saldo ,double porcentajeCobrado) throws SaldoException {
+		super(numCuenta, titular1, saldo);
 
 		if (porcentajeCobrado > 0) {
 			this.porcentajeCobrado = porcentajeCobrado;
