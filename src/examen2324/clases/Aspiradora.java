@@ -1,5 +1,8 @@
 package examen2324.clases;
 
+import examen2324.exceptions.ModeloException;
+import excepciones.ejercicio3.PrecioException;
+
 /**
  * Clase que va a guardar los atributos mas importantes de un mando de aspiradora
  */
@@ -16,8 +19,10 @@ public class Aspiradora extends Mando implements Velocidad {
 	 * @param anchura Anchura del mando
 	 * @param altura  Altura del mando
 	 * @param precio  Precio del mando
+	 * @throws ModeloException Excepcion que salta cuando el modelo es nulo o en blanco
+	 * @throws PrecioException Excepcion que salta cuando el precio es negativo
 	 */
-	public Aspiradora(String modelo, double anchura, double altura, double precio) {
+	public Aspiradora(String modelo, double anchura, double altura, double precio) throws ModeloException, PrecioException {
 		super(modelo, anchura, altura, precio);
 	}
 

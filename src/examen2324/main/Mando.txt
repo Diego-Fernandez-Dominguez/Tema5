@@ -1,20 +1,3 @@
-class Mando
-	private String modelo
-	private double anchura
-	private double altura
-	private double precio
-	private boolean estadoBoton
-
-	---------------------------------------
-	
-	public Mando(modelo, anchura, altura, precio)
-	
-	---------------------------------------
-
-	public boolean encenderMando()
-	public boolean apagarMando()
-
-
 interface Volumen
 	
 	boolean subirVolumen()
@@ -26,34 +9,98 @@ interface Velocidad
 	boolean subirVelocidad()
 	boolean bajarVelocidad()
 	
+
+class ModeloException extends Exception
+class PrecioException extends Exception
+	
+
+class Mando
+	private String modelo
+	private double anchura
+	private double altura
+	private double precio
+	private boolean estadoBoton = false
+
+	---------------------------------------
+	
+	public Mando(modelo, anchura, altura, precio) throws ModeloException, PrecioException
+	
+	---------------------------------------
+	
+	public getModelo()
+	public getAnchura()
+	public getAltura()
+	public getPrecio()
+	public isEstadoBoton()
+	
+	public setPrecio() throws PrecioException 
+
+	public boolean encenderMando()
+	public boolean apagarMando()
+	
+	override: 
+		public equals()
+		public compareTo()
+		public toString
+	
 	
 class Television extends Mando implements Volumen
-	private int volumen
-	private int canal
+	private int volumen = 0
+	private int canal = 1
 	
 	---------------------------------------	
 
-	public Television (modelo, anchura, altura, precio, volumen, canal)
+	public Television (modelo, anchura, altura, precio) throws ModeloException, PrecioException
 
 	---------------------------------------
+	
+	public getVolumen()
+	public getCanal()
+	
+	public setCanal()
+	
+	override:
+		public subirVolumen()
+		public bajarVolumen()
+		public toString
 
 
 class MiniCadenas extends Mando implements Volumen
 
-	private int volumen
+	private int volumen = 0
 	
 	---------------------------------------	
 
-	public MiniCadena (modelo, anchura, altura, precio)
+	public MiniCadena (modelo, anchura, altura, precio) throws ModeloException, PrecioException
 
 	---------------------------------------
-
+	
+	public getVolumen()
+	
+	public subirVolumen()
+	public bajarVolumen()
+	
+	override:
+		public subirVolumen()
+		public bajarVolumen()
+		public toString
+	
 
 class Aspiradora extends Mando implements Velocidad
 	private int velocidad (def 0, max 3)
 
-	public Aspiradora(modelo, anchura, altura, precio)
+	public Aspiradora(modelo, anchura, altura, precio) throws ModeloException, PrecioException
 
+	public getVelocidad()
+
+	public subirVelocidad()
+	public bajarVelocidad()
+	
+	override:
+		public subirVelocidad()
+		public bajarVelocidad()
+		public toString
+	
 
 class AireAcondicionado extends Mando implements Velocidad
 	enum Modo{
@@ -62,10 +109,19 @@ class AireAcondicionado extends Mando implements Velocidad
 	
 	private Modo tipoModo (def FRIO)
 	
-	private int temperatura
+	private int temperatura = 25
 	
 	private int velocidad (def 0, max 5)
 	
-	public AireAcondicionado(modelo, anchura, altura, precio)
+	public AireAcondicionado(modelo, anchura, altura, precio) throws ModeloException, PrecioException
+	
+	public getVelocidad()
+	public getTipoModo()
+	public getTemperatura()
+	
+	override:
+		public subirVelocidad()
+		public bajarVelocidad()
+		public toString
 
 	

@@ -1,5 +1,8 @@
 package examen2324.clases;
 
+import examen2324.exceptions.ModeloException;
+import excepciones.ejercicio3.PrecioException;
+
 /**
  * Clase que va a guardar los atributos mas importantes de un mando
  */
@@ -36,11 +39,16 @@ public class Mando implements Comparable<Mando> {
 	 * @param anchura Anchura del mando
 	 * @param altura  Altura del mando
 	 * @param precio  Precio del mando
+	 * @throws ModeloException Excepcion que salta cuando el modelo es nulo o en
+	 *                         blanco
+	 * @throws PrecioException Excepcion que salta cuando el precio es negativo
 	 */
-	public Mando(String modelo, double anchura, double altura, double precio) {
+	public Mando(String modelo, double anchura, double altura, double precio) throws ModeloException, PrecioException {
 
 		if (modelo != null && !modelo.isBlank()) {
 			this.modelo = modelo;
+		} else {
+			throw new ModeloException();
 		}
 
 		if (anchura >= 0) {
@@ -53,6 +61,8 @@ public class Mando implements Comparable<Mando> {
 
 		if (precio >= 0) {
 			this.precio = precio;
+		} else {
+			throw new PrecioException();
 		}
 
 	}
@@ -132,10 +142,13 @@ public class Mando implements Comparable<Mando> {
 	 * Metodo para cambiar el precio del mando
 	 * 
 	 * @param precio Precio a cambiar del mando, no puede ser negativo
+	 * @throws PrecioException
 	 */
-	public void setPrecio(double precio) {
+	public void setPrecio(double precio) throws PrecioException {
 		if (precio >= 0) {
 			this.precio = precio;
+		} else {
+			throw new PrecioException();
 		}
 	}
 
@@ -178,7 +191,8 @@ public class Mando implements Comparable<Mando> {
 	 * Saca por pantalla el mando
 	 */
 	public String toString() {
-		return "Modelo: " + modelo + ", Anchura: " + anchura + "cm, Altura: " + altura + "cm, Estado: " + estadoBoton;
+		return "Modelo: " + modelo + ", Anchura: " + anchura + "cm, Altura: " + altura + "cm, Estado: " + estadoBoton
+				+ ", Precio: " + precio;
 	}
 
 }
