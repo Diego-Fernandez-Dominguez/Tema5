@@ -1,4 +1,4 @@
-package experimentos.boxeador;
+package practicas.boxeador;
 
 public interface BoxingLife {
 

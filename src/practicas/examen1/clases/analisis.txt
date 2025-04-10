@@ -1,0 +1,35 @@
+class Dispositivo
+	private String modelo
+	private String marca
+	private boolean conectado
+	private double precio
+	
+	public Dispositivo(modelo,marca,precio)
+	
+	public getModelo()
+	public getMarca()
+	public getConectado()
+	public getPrecio()
+	
+	public setPrecio()
+	
+	public void onOff()
+	
+	override:
+		public compareTo()
+		public equals()
+		public toString()
+		
+class Bombilla extends Dispositivo
+	
+	enum Color{BLANCO,ROJO,AZUL}
+	
+	private int intensidad
+	private tipoColor color
+	
+	public Dispositivo(modelo, marca, precio, color)
+	
+	public getIntensidad()
+	public getColor()
+	
+	public

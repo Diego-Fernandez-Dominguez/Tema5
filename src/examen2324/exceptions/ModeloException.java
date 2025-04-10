@@ -1,5 +1,8 @@
 package examen2324.exceptions;
 
+/**
+ * Excepcion que salta cuando el atributo modelo de una clase mando es nula o vacia
+ */
 public class ModeloException extends Exception{
 
 	@Override

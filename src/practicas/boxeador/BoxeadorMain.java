@@ -1,4 +1,4 @@
-package experimentos.boxeador;
+package practicas.boxeador;
 
 public class BoxeadorMain {
 	public static void main(String[] args) {
